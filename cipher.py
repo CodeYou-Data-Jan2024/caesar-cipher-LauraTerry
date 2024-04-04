@@ -1,12 +1,9 @@
-# Laura Terry caeser cypher code pracrtice
-
 alpha = ("abcdefghijklmnopqrstuvwxyz")
 
 print("Welcome to the Caeser Cypher!")
 begin = input("Would you like to encode (e) or decode (d) ? ").lower()
 textgiven=input("What is your text? ").lower()
-shift=int(input("Please provide the number key, choose 1-26 "))
-
+shift=5
 
 def encrypt(textgiven, shift):
     encodedtext = ' '
