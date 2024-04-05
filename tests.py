@@ -11,7 +11,7 @@ import builtins
                         ['A sentence with Capital letters.', 'f xjsyjshj bnym hfunyfq qjyyjwx.'],
                         ['#$%^&*()', '#$%^&*()']
                         ])
-def test_cipher(original_sentence, encrypted_sentence, monkeypatch):
+def test_ciphercmonkeypatch):
     mocked_stdout = io.StringIO()
 
     with monkeypatch.context() as m:
