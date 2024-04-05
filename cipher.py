@@ -1,40 +1,19 @@
-alpha = ("abcdefghijklmnopqrstuvwxyz")
+#move alphabet by 5 spaces to the right and add to dictionary
 
-print("Welcome to the Caeser Cypher!")
-begin = input("Would you like to encode (e) or decode (d) ? ").lower()
-textgiven=input("What is your text? ").lower()
-shift=5
+cipher_alphabet ={'a': 'f', 'b':'g', 'c':'h', 'd':'i', 'e':'j', 'f':'k', 'g':'l', 'h':'m', 'i':'n', 'j':'o', 'k':'p', 'l':'q', 'm':'r', 'n':'s', 'o':'t', 'p':'u', 'q':'v', 'r':'w', 's':'x', 't':'y', 'u':'z', 'v':'a', 'w':'b', 'x':'c', 'y':'d', 'z':'e'}
 
-def encrypt(textgiven, shift):
-    encodedtext = ' '
-    for letter in textgiven:
-        index = alpha.find(letter)
-        newalpha = index + shift
-        if newalpha >= 26 :
-            newalpha -=26
-        encodedtext += alpha[newalpha]
-    return encodedtext
+print("Let's encrypt a message!")
+#convert original sentence to lowercase
+original_sentence = input("Please, enter a message you'd like to encrypt: ").lower()
+#placeholder for new sentence
+encrypted_sentence = ''
 
-def decrypt(textgiven, shift):
-    decodedtext = ' '
-    for letter in textgiven:
-        index = alpha.find(letter)
-        newalpha = index - shift
-        if newalpha <0 :
-            newalpha +=26
-        decodedtext += alpha[newalpha]
-    return decodedtext
+#identify first value pair as letter, tell it to correlate with other letter and add to new variable encrypted_sentence
+for letter in original_sentence:
+    if letter in cipher_alphabet:
+        encrypted_sentence += cipher_alphabet.get(letter, letter)
+        #create a case for things that aren't letters
+    else:
+        encrypted_sentence += letter
 
-if begin == "e":
-    encodedtext = encrypt(textgiven, shift)
-    print (encodedtext)
-
-if begin == "d":
-    decodedtext = decrypt(textgiven, shift)
-    print(decodedtext)
-
-
-
-
-
-    
+print("The encrypted sentence is:" , encrypted_sentence)
